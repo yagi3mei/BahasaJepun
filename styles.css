@@ -24,6 +24,20 @@
 /* スマホ用にボタンのスタイルを調整 */
 @media screen and (max-width: 600px) {
     .button {
+        font-size: 12px;  /* ボタンの文字サイズを縮小 */
+        padding: 5px 10px;  /* ボタンの余白を縮小 */
+        display: inline-block;  /* ボタンを横に並べる */
+    }
+    .button-container {
+        display: flex;
+        flex-wrap: wrap;  /* ボタンを画面幅に合わせて並べる */
+        justify-content: space-between;  /* ボタンの間隔を調整 */
+    }
+}
+
+/* スマホ用にボタンのスタイルを調整 */
+/*@media screen and (max-width: 600px) {
+    .button {
         font-size: 14px;
         padding: 10px 15px;
     }
@@ -35,6 +49,7 @@
         margin-bottom: 10px;
     }
 }
+*/
 
 /* iframe のスタイル */
 iframe {
