@@ -33,6 +33,9 @@
         flex-wrap: wrap;  /* ボタンを画面幅に合わせて並べる */
         justify-content: space-between;  /* ボタンの間隔を調整 */
     }
+    .button {
+        margin-bottom: 10px;
+    }
 }
 
 /* スマホ用にボタンのスタイルを調整 */
