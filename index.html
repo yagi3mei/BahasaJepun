@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizlet bBahasa Jepun</title>
+    <!-- CSSファイルのリンク -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Quizlet Bahasa Jepun</h1>
+
+    <h3>Mula-mula, pilih tahap gred anda, topik yang ingin anda pelajari dan mod pembelajaran.</h3>
+
+    <!-- 年次とクイズレットのプルダウンリスト -->
+    <div class="select-container">
+        <label for="yearSelect">tahun persekolahan:</label>
+        <select id="yearSelect" class="select-menu" onchange="updateQuizletOptions()">
+            <option value="" disabled selected>何年生ですか？</option>
+            <option value="1">1ねんせい</option>
+            <option value="2">2年生</option>
+            <option value="3">3年生</option>
+            <option value="4">4年生</option>
+            <option value="5">5年生</option>
+        </select>
+
+        <label for="quizletSelect">Apa yang perlu dipelajari:</label>
+        <select id="quizletSelect" class="select-menu">
+            <!-- 初期状態では空のリスト -->
+        </select>
+    </div>
+
+    <!-- 学習モード選択ボタン -->
+    <div class="button-container">
+        <button class="button" onclick="loadQuizlet('flash-cards')">flash-cards</button>
+        <button class="button" onclick="loadQuizlet('learn')">learn</button>
+        <button class="button" onclick="loadQuizlet('test')">test</button>
+        <button class="button" onclick="loadQuizlet('match')">match</button>
+    </div>
+
+    <!-- Quizlet埋め込み -->
+    <iframe id="quizletIframe" style="height: 500px; display: none;"></iframe>
+<!--    <iframe id="quizletIframe" src="https://quizlet.com/938455135/match/embed?i=x8lug&x=1jj1" style="height: 500px;"></iframe> -->
+
+    <!-- JavaScriptファイルのリンク -->
+    <script src="script.js"></script>
+</body>
+</html>
