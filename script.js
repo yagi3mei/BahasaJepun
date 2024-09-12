@@ -2,24 +2,28 @@ function loadQuizlet(mode) {
     const baseUrl = document.getElementById('quizletSelect').value;
     const iframe = document.getElementById('quizletIframe');
 
-    // モードに応じて iframe の高さを変更
-    let height;
-    if (mode === 'flash-cards') {
-        height = '500px';
-    } else if (mode === 'learn') {
-        height = '700px';  // 学習モードは少し高め
-    } else if (mode === 'test') {
-        height = '700px';  // テストモードは700に変更
-    } else if (mode === 'match') {
-        height = '500px';  // マッチは低め
-    }
-
-    // iframe の高さと src を更新
-    iframe.style.height = height;
-    iframe.src = `${baseUrl}/${mode}/embed?i=x8lug&x=1jj1`;
-
-    // iframeを表示
+    // 選択肢が選ばれたらiframeを表示
     iframe.style.display = 'block';
+
+    if (baseUrl === 'https://yagi3mei.github.io/mysite/index.html') {
+        iframe.style.height = '700px'; // ゲーム用の高さ
+        iframe.src = baseUrl;  // 直接ゲームのURLを設定
+    } else {
+        // Quizletのモードに応じて処理
+        let height;
+        if (mode === 'flash-cards') {
+            height = '500px';
+        } else if (mode === 'learn') {
+            height = '700px';
+        } else if (mode === 'test') {
+            height = '700px';
+        } else if (mode === 'match') {
+            height = '500px';
+        }
+
+        iframe.style.height = height;
+        iframe.src = `${baseUrl}/${mode}/embed?i=x8lug&x=1jj1`;
+    }
 }
 
 function updateQuizletOptions() {
@@ -30,6 +34,11 @@ function updateQuizletOptions() {
     quizletSelect.innerHTML = ''; // 選択肢をリセット
 
     if (yearSelect === '1') {
+        const myGameOption = document.createElement('option');
+        myGameOption.value = 'https://yagi3mei.github.io/mysite/index.html';
+        myGameOption.text = '１ねんせい　ひらがな（hiragana）';
+        quizletSelect.appendChild(myGameOption);
+
         const option1 = document.createElement('option');
         option1.value = 'https://quizlet.com/938455135';
         option1.text = '１ねんせい　BAB1 ① perkataan baru';
