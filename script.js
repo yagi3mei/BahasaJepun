@@ -6,7 +6,7 @@ function loadQuizlet(mode) {
     iframe.style.display = 'block';
 
     if (baseUrl === 'https://yagi3mei.github.io/mysite/index.html') {
-        iframe.style.height = '700px'; // ゲーム用の高さ
+        iframe.style.height = '600px'; // ゲーム用の高さ
         iframe.src = baseUrl;  // 直接ゲームのURLを設定
     } else {
         // Quizletのモードに応じて処理
