@@ -33,6 +33,14 @@ function updateQuizletOptions() {
     // 年次に応じた選択肢を変更
     quizletSelect.innerHTML = ''; // 選択肢をリセット
 
+    // Add default "select contents" option
+    const defaultOption = document.createElement('option');
+    defaultOption.value = '';
+    defaultOption.text = 'select contents';
+    defaultOption.disabled = true; // Make it unselectable after the user selects something else
+    defaultOption.selected = true; // Make it the default selected option
+    quizletSelect.appendChild(defaultOption);
+
     if (yearSelect === '1') {
         const myGameOption = document.createElement('option');
         myGameOption.value = 'https://yagi3mei.github.io/mysite/index.html';
