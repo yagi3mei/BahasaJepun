@@ -152,7 +152,34 @@ function updateQuizletOptions() {
         option10.value = 'https://quizlet.com/940872259/';
         option10.text = 'BAB10 ② kata kerja';
         quizletSelect.appendChild(option10);
-
     }
+
+    } else if (yearSelect === '3') {
+      const option1 = document.createElement('option');
+      option1.value = 'https://quizlet.com/945197479/';
+      option1.text = 'BAB11 ① あたらしいことば';
+      quizletSelect.appendChild(option1);
+
+      const option2 = document.createElement('option');
+      option2.value = 'https://quizlet.com/945202987/';
+      option2.text = 'BAB12 ① あたらしいことば';
+      quizletSelect.appendChild(option2);
+
+      const option3 = document.createElement('option');
+      option3.value = 'https://quizlet.com/945208312/';
+      option3.text = 'BAB13 ① あたらしいことば';
+      quizletSelect.appendChild(option3);
+
+      const option4 = document.createElement('option');
+      option4.value = 'https://quizlet.com/945215459/';
+      option4.text = 'BAB14 ① あたらしいことば';
+      quizletSelect.appendChild(option4);
+
+      const option5 = document.createElement('option');
+      option5.value = 'https://quizlet.com/945219107/';
+      option5.text = 'BAB15 ① あたらしいことば';
+      quizletSelect.appendChild(option5);
+    }
+
     // 他の学年の処理をここに追加
 }
